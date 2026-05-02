@@ -1,0 +1,77 @@
+<mxfile host="65bd71144e">
+    <diagram id="component-interactions" name="Component Interactions">
+        <mxGraphModel dx="627" dy="304" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" background="none" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="Component Interactions - Data Flow" style="text;html=1;fontSize=18;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry y="10" width="1200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="hub" value="Central Hub&#xa;Event Processing&#xa;Decision Engine" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fontStyle=1;fillColor=#0066CC;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="350" width="300" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="sensor-input" value="Sensor Layer&#xa;Motion, Door, Water, Cameras" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#FF9999;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="350" width="150" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="event-proc" value="Event Processor&#xa;• Validate events&#xa;• Check thresholds&#xa;• Rate limiting" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;fillColor=#E6F2FF;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="150" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="decision" value="Decision Engine&#xa;• Rules evaluation&#xa;• Automation logic&#xa;• Failover logic" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;fillColor=#E6F2FF;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="150" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="storage" value="Storage Layer&#xa;• 2TB SSD&#xa;• Video buffer (30d)&#xa;• Event logs&#xa;• User data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;fillColor=#CCFFCC;" parent="1" vertex="1">
+                    <mxGeometry x="640" y="150" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="controller-output" value="Controller Layer&#xa;Lock, Lights, Outlets,&#xa;Valve, Siren" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#99CCFF;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="350" width="150" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="notify" value="Notification Layer&#xa;Push, SMS, Email" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#FFD700;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="650" width="300" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="cloud-sync" value="Cloud Sync (Optional)&#xa;AWS IoT / Azure IoT" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#FFFFCC;strokeColor=#FF9900;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="50" width="150" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow1" value="Sensor Events&amp;#n(LoRaWAN/WiFi)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=2;fontSize=9;" parent="1" source="sensor-input" target="hub" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="250" y="400"/>
+                            <mxPoint x="450" y="400"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="flow2" value="Raw Events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=9;" parent="1" source="hub" target="event-proc" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow3" value="Validated Events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=9;" parent="1" source="event-proc" target="decision" edge="1">
+                    <mxGeometry x="1" y="14" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="480" y="190"/>
+                            <mxPoint x="460" y="190"/>
+                        </Array>
+                        <mxPoint x="-10" y="-4" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="flow4" value="Log Events" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#009900;strokeWidth=2;fontSize=9;" parent="1" source="decision" target="storage" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="460" y="190"/>
+                            <mxPoint x="640" y="190"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="flow5" value="Async Sync" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF9900;strokeWidth=2;fontSize=9;" parent="1" source="storage" target="cloud-sync" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow6" value="Control Commands&amp;#n(WiFi/Z-Wave)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;fontSize=9;" parent="1" source="hub" target="controller-output" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="flow7" value="Alert / Notifications" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=2;fontSize=9;" parent="1" source="hub" target="notify" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend" value="Data Flow Legend:&#xa;Red = Sensor Input  |  Blue = Internal Processing  |  Green = Storage  |  Orange = Cloud  |  Purple = Control Output" style="text;html=1;fontSize=9;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="750" width="1100" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

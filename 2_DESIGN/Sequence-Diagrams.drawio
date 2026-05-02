@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="VS Code" modified="2026-05-02T00:00:00.000Z" agent="5.0" version="22.0.0" type="device">
+  <diagram id="sequence-diagrams" name="Sequence Diagrams">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Title -->
+        <mxCell id="title" value="Critical Scenarios - Sequence Diagrams" style="text;html=1;fontSize=18;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="1600" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- ===== SCENARIO 1: MOTION → ALERT ===== -->
+        <mxCell id="sc1-title" value="Scenario 1: Motion Detection → Alert (&lt;5 seconds)" style="text;html=1;fontSize=12;fontStyle=1;align=left;fillColor=#FFE6E6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="70" width="400" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- Participants -->
+        <mxCell id="sc1-sensor" value="Motion Sensor" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#FFB3B3;" vertex="1" parent="1">
+          <mxGeometry x="50" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sc1-hub" value="Hub" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#0066CC;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sc1-user" value="User (Phone)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#FFD700;" vertex="1" parent="1">
+          <mxGeometry x="350" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- Lifelines -->
+        <mxCell id="sc1-l1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc1-sensor" target="sc1-sensor">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="100" y="160"/>
+            <mxPoint x="100" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sc1-l2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc1-hub" target="sc1-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="250" y="160"/>
+            <mxPoint x="250" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sc1-l3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc1-user" target="sc1-user">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="400" y="160"/>
+            <mxPoint x="400" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Messages -->
+        <mxCell id="sc1-m1" value="1. Motion detected (LoRaWAN)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc1-sensor" target="sc1-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="150" y="200"/>
+            <mxPoint x="200" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc1-m2" value="2. Validate event &amp; camera" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc1-hub" target="sc1-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="250" y="230"/>
+            <mxPoint x="250" y="260"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc1-m3" value="3. Generate alert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc1-hub" target="sc1-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="250" y="280"/>
+            <mxPoint x="250" y="310"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc1-m4" value="4. Push notification" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF9900;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc1-hub" target="sc1-user">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="300" y="340"/>
+            <mxPoint x="400" y="340"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc1-time" value="Total: &lt;5s" style="text;html=1;fontSize=10;fontStyle=1;align=center;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="200" y="370" width="200" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- ===== SCENARIO 2: ARM COMMAND ===== -->
+        <mxCell id="sc2-title" value="Scenario 2: User Arm Command (&lt;5 seconds)" style="text;html=1;fontSize=12;fontStyle=1;align=left;fillColor=#E6F2FF;" vertex="1" parent="1">
+          <mxGeometry x="480" y="70" width="400" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- Participants -->
+        <mxCell id="sc2-user" value="User (App)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#FFD700;" vertex="1" parent="1">
+          <mxGeometry x="510" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sc2-hub" value="Hub" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#0066CC;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="660" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sc2-sensor" value="Sensors" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#FFB3B3;" vertex="1" parent="1">
+          <mxGeometry x="810" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- Lifelines -->
+        <mxCell id="sc2-l1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc2-user" target="sc2-user">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="560" y="160"/>
+            <mxPoint x="560" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sc2-l2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc2-hub" target="sc2-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="710" y="160"/>
+            <mxPoint x="710" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sc2-l3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc2-sensor" target="sc2-sensor">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="860" y="160"/>
+            <mxPoint x="860" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Messages -->
+        <mxCell id="sc2-m1" value="1. Arm request (WiFi)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc2-user" target="sc2-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="610" y="200"/>
+            <mxPoint x="660" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc2-m2" value="2. Authenticate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc2-hub" target="sc2-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="710" y="230"/>
+            <mxPoint x="710" y="260"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc2-m3" value="3. Activate sensors" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc2-hub" target="sc2-sensor">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="760" y="290"/>
+            <mxPoint x="810" y="290"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc2-m4" value="4. Confirm armed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc2-hub" target="sc2-user">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="660" y="340"/>
+            <mxPoint x="560" y="340"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc2-time" value="Total: &lt;5s" style="text;html=1;fontSize=10;fontStyle=1;align=center;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="660" y="370" width="200" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- ===== SCENARIO 3: WiFi FAILOVER ===== -->
+        <mxCell id="sc3-title" value="Scenario 3: WiFi Failover to LoRaWAN (&lt;30 seconds)" style="text;html=1;fontSize=12;fontStyle=1;align=left;fillColor=#E6FFE6;" vertex="1" parent="1">
+          <mxGeometry x="960" y="70" width="400" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- Participants -->
+        <mxCell id="sc3-hub" value="Hub" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#0066CC;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="990" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sc3-net" value="Network" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#B3D9FF;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="sc3-lora" value="LoRaWAN" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#009900;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="120" width="100" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- Lifelines -->
+        <mxCell id="sc3-l1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc3-hub" target="sc3-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="1040" y="160"/>
+            <mxPoint x="1040" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sc3-l2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc3-net" target="sc3-net">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="1190" y="160"/>
+            <mxPoint x="1190" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sc3-l3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CCCCCC;strokeWidth=1;dashed=1;" edge="1" parent="1" source="sc3-lora" target="sc3-lora">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="1340" y="160"/>
+            <mxPoint x="1340" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Messages -->
+        <mxCell id="sc3-m1" value="1. WiFi alive check (periodic)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc3-hub" target="sc3-net">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="1090" y="200"/>
+            <mxPoint x="1140" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc3-m2" value="2. No response (timeout)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc3-hub" target="sc3-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="1040" y="230"/>
+            <mxPoint x="1040" y="260"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc3-m3" value="3. Activate LoRaWAN fallback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#009900;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc3-hub" target="sc3-lora">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="1090" y="290"/>
+            <mxPoint x="1290" y="290"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc3-m4" value="4. Resume operations" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="sc3-hub" target="sc3-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="1040" y="330"/>
+            <mxPoint x="1040" y="360"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="sc3-time" value="Total: &lt;30s" style="text;html=1;fontSize=10;fontStyle=1;align=center;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="370" width="200" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- Legend/Performance Note -->
+        <mxCell id="legend" value="Performance Requirements:" style="text;html=1;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="480" width="1500" height="30" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="perf-notes" value="• Motion Detection to Alert: &lt;5 seconds (real-time security response)&#10;• User Command to System Response: &lt;5 seconds (user experience)&#10;• Network Failover: &lt;30 seconds (autonomous operation continuity)&#10;• Video Streaming on Cellular: &lt;2-3 second delay (acceptable for security monitoring)&#10;• Door Alarm Response: &lt;3 seconds (emergency response)&#10;• Cloud Sync (Async): No timing constraint (eventual consistency)" style="text;html=1;fontSize=9;align=left;verticalAlign=top;fontFamily=monospace;" vertex="1" parent="1">
+          <mxGeometry x="50" y="515" width="1500" height="100" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

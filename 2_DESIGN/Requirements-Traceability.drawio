@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="VS Code" modified="2026-05-02T00:00:00.000Z" agent="5.0" version="22.0.0" type="device">
+  <diagram id="req-traceability" name="Requirements Traceability">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Title -->
+        <mxCell id="title" value="Requirements Traceability Matrix" style="text;html=1;fontSize=18;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="1600" height="40" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="subtitle" value="Bidirectional Mapping: Requirements ↔ Components ↔ Use Cases ↔ Tests" style="text;html=1;fontSize=12;align=center;fillColor=#F0F0F0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="50" width="1600" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- ===== LAYER 1: REQUIREMENTS (LEFT) ===== -->
+        <mxCell id="l1-title" value="REQUIREMENTS" style="text;html=1;fontSize=12;fontStyle=1;align=center;fillColor=#FFE6E6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="150" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- Functional Requirement Examples -->
+        <mxCell id="req-f1" value="FRQ-001: Motion Detection&#10;Priority: High&#10;Type: Security" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFCCCC;" vertex="1" parent="1">
+          <mxGeometry x="50" y="150" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="req-f2" value="FRQ-015: Arm/Disarm System&#10;Priority: Critical&#10;Type: Control" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFCCCC;" vertex="1" parent="1">
+          <mxGeometry x="50" y="260" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="req-f3" value="FRQ-075: Video Recording&#10;Priority: High&#10;Type: Data" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFCCCC;" vertex="1" parent="1">
+          <mxGeometry x="50" y="370" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="req-nf1" value="NFRQ-101: &lt;5s Response Time&#10;Priority: High&#10;Type: Performance" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFCCCC;" vertex="1" parent="1">
+          <mxGeometry x="50" y="480" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="req-nf2" value="NFRQ-145: 99.95% Uptime&#10;Priority: Critical&#10;Type: Reliability" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFCCCC;" vertex="1" parent="1">
+          <mxGeometry x="50" y="590" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- ===== LAYER 2: COMPONENTS (CENTER-LEFT) ===== -->
+        <mxCell id="l2-title" value="COMPONENTS" style="text;html=1;fontSize=12;fontStyle=1;align=center;fillColor=#E6F2FF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="100" width="150" height="30" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="comp-hub" value="🔵 Hub (Processor)&#10;Raspberry Pi 4B&#10;Event handling" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#B3D9FF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="150" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="comp-sensors" value="🔴 Sensors&#10;Motion, Door, Water&#10;LoRaWAN 915MHz" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#B3D9FF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="260" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="comp-cameras" value="🟢 Cameras&#10;PoE 4K, Doorbell 2K&#10;WiFi 1080p (Opt)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#B3D9FF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="370" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="comp-power" value="⚡ Power Subsystem&#10;AC + UPS (4h)&#10;LiFePO4 battery" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#B3D9FF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="480" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="comp-net" value="📡 Connectivity&#10;WiFi 6, LoRa mesh&#10;4G LTE, Satellite" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#B3D9FF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="590" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- ===== LAYER 3: USE CASES (CENTER-RIGHT) ===== -->
+        <mxCell id="l3-title" value="USE CASES" style="text;html=1;fontSize=12;fontStyle=1;align=center;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="510" y="100" width="150" height="30" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="uc-detect" value="UC-001: Detect Motion&#10;Actor: System&#10;Triggers: Intrusion?" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="510" y="150" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="uc-arm" value="UC-002: Arm System&#10;Actor: Homeowner&#10;Activates: All sensors" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="510" y="260" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="uc-video" value="UC-007: View Video&#10;Actor: Homeowner&#10;Protocol: WiFi/4G" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="510" y="370" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="uc-failover" value="UC-015: Network Failover&#10;Actor: System&#10;Trigger: WiFi loss" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="510" y="480" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="uc-uptime" value="UC-020: Maintain Uptime&#10;Actor: System&#10;Mode: Autonomous" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="510" y="590" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- ===== LAYER 4: TEST CASES (RIGHT) ===== -->
+        <mxCell id="l4-title" value="TEST CASES" style="text;html=1;fontSize=12;fontStyle=1;align=center;fillColor=#E6FFE6;" vertex="1" parent="1">
+          <mxGeometry x="740" y="100" width="150" height="30" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="test-v1" value="VER-001: Motion Sensor\\n&lt;5s response (Lab)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="740" y="150" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="test-v5" value="VER-005: Arm Function\\nAll sensors activate" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="740" y="260" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="test-v10" value="VER-010: Video Recording\\n720p continuous" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="740" y="370" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="test-v18" value="VER-018: Network Failover\\n&lt;30s transition" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="740" y="480" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="test-v25" value="VER-025: Uptime Test\\n30-day run" style="rounded=0;whiteSpace=wrap;html=1;fontSize=9;fillColor=#CCFFCC;" vertex="1" parent="1">
+          <mxGeometry x="740" y="590" width="150" height="80" as="geometry"/>
+        </mxCell>
+        
+        <!-- ===== TRACEABILITY LINKS ===== -->
+        <!-- REQ-F1 → Components -->
+        <mxCell id="link1" value="traces" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF6666;strokeWidth=2;" edge="1" parent="1" source="req-f1" target="comp-sensors">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="link2" value="traces" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF6666;strokeWidth=2;" edge="1" parent="1" source="req-f1" target="comp-hub">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="200" y="160"/>
+            <mxPoint x="280" y="160"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Components → Use Cases -->
+        <mxCell id="link3" value="enables" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;" edge="1" parent="1" source="comp-sensors" target="uc-detect">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="430" y="290"/>
+            <mxPoint x="510" y="190"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link4" value="enables" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;" edge="1" parent="1" source="comp-hub" target="uc-arm">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="430" y="290"/>
+            <mxPoint x="510" y="290"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link5" value="enables" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;" edge="1" parent="1" source="comp-cameras" target="uc-video">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="430" y="400"/>
+            <mxPoint x="510" y="400"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link6" value="enables" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;" edge="1" parent="1" source="comp-net" target="uc-failover">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="430" y="630"/>
+            <mxPoint x="510" y="530"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link7" value="enables" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=2;" edge="1" parent="1" source="comp-power" target="uc-uptime">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="430" y="630"/>
+            <mxPoint x="510" y="630"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Use Cases → Tests -->
+        <mxCell id="link8" value="tested by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" source="uc-detect" target="test-v1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="660" y="190"/>
+            <mxPoint x="740" y="190"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link9" value="tested by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" source="uc-arm" target="test-v5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="660" y="300"/>
+            <mxPoint x="740" y="300"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link10" value="tested by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" source="uc-video" target="test-v10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="660" y="410"/>
+            <mxPoint x="740" y="410"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link11" value="tested by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" source="uc-failover" target="test-v18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="660" y="520"/>
+            <mxPoint x="740" y="520"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="link12" value="tested by" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#009900;strokeWidth=2;" edge="1" parent="1" source="uc-uptime" target="test-v25">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+            <mxPoint x="660" y="630"/>
+            <mxPoint x="740" y="630"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- ===== STATISTICS LEGEND ===== -->
+        <mxCell id="stats" value="Traceability Summary:" style="text;html=1;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="100" width="550" height="30" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="stats-detail" value="• Total Requirements: 355 (159 Functional, 196 Non-Functional)&#10;• Total Components: 8 (Hardware + Software subsystems)&#10;• Total Use Cases: 15+ (4 actor types)&#10;• Total Test Cases: 58 (30 Verification, 28 Validation)&#10;• Traceability: 100% (every requirement has ≥1 component, use case, test)&#10;&#10;Link Types:&#10;🔴 FRQ traces to Components&#10;🔵 Components enable Use Cases&#10;🟢 Use Cases tested by Test Cases&#10;⚫ Bidirectional relationships (N:N mapping)&#10;&#10;Coverage Metrics:&#10;• Forward Traceability: Every FRQ has implementation&#10;• Backward Traceability: Every component linked to FRQ&#10;• Test Coverage: Every UC has ≥1 verification test&#10;• Validation: Critical paths have system-level tests" style="text;html=1;fontSize=8;align=left;verticalAlign=top;fontFamily=monospace;fillColor=#F0F0F0;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="140" width="550" height="330" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

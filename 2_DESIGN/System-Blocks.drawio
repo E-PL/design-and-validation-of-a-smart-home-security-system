@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="VS Code" modified="2026-05-02T00:00:00.000Z" agent="5.0" version="22.0.0" type="device">
+  <diagram id="system-blocks" name="System Block Definition">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Title -->
+        <mxCell id="title" value="SysML Block Definition Diagram - Smart Home Security System" style="text;html=1;fontSize=18;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="1400" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- MAIN SYSTEM BLOCK -->
+        <mxCell id="sys-block" value="«block»&#10;Smart Home Security System&#10;—&#10;PURPOSE: Autonomous home monitoring&#10;MODE: Local-first, cloud-optional" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;fillColor=#E6F2FF;strokeColor=#0066CC;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="500" y="70" width="400" height="100" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 1: Control Unit -->
+        <mxCell id="block1" value="«block»&#10;Control Unit (Hub)&#10;—&#10;Responsibilities:&#10;• Event processing&#10;• Decision making&#10;• Local storage&#10;• User authentication&#10;—&#10;Hardware:&#10;• Raspberry Pi 4B&#10;• 8GB RAM, 2TB SSD" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFE6E6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="250" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 2: Sensor Subsystem -->
+        <mxCell id="block2" value="«block»&#10;Sensor Subsystem&#10;—&#10;Components:&#10;• Motion sensors (Active IR)&#10;• Door/window (Magnetic)&#10;• Water leak (Resistive)&#10;—&#10;Protocol: LoRaWAN 915MHz&#10;Battery: 5+ years" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFB3B3;" vertex="1" parent="1">
+          <mxGeometry x="260" y="250" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 3: Camera Subsystem -->
+        <mxCell id="block3" value="«block»&#10;Camera Subsystem&#10;—&#10;Components:&#10;• PoE 4K (Primary)&#10;• Doorbell 2K&#10;• WiFi 1080p (Opt)&#10;• 4G LTE (Contingency)&#10;—&#10;Storage: 30-day rolling buffer&#10;Resolution: 3840×2160 @ 30fps" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#B3E5B3;" vertex="1" parent="1">
+          <mxGeometry x="470" y="250" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 4: Alarm Subsystem -->
+        <mxCell id="block4" value="«block»&#10;Alarm Subsystem&#10;—&#10;Components:&#10;• Siren (100dB)&#10;• LED indicators&#10;• Push notifications&#10;• SMS/Email alerts&#10;—&#10;Escalation: 4 levels&#10;Multi-user distribution" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFD700;" vertex="1" parent="1">
+          <mxGeometry x="680" y="250" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 5: Power Subsystem -->
+        <mxCell id="block5" value="«block»&#10;Power Subsystem&#10;—&#10;Primary: AC mains&#10;Backup: 4+ hour UPS&#10;Battery: LiFePO4&#10;—&#10;Monitoring:&#10;• Voltage regulation&#10;• Low battery alerts&#10;• Graceful shutdown" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFCCCC;" vertex="1" parent="1">
+          <mxGeometry x="890" y="250" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 6: Connectivity Subsystem -->
+        <mxCell id="block6" value="«block»&#10;Connectivity Subsystem&#10;—&#10;WiFi: 802.11ax (Primary)&#10;LoRaWAN: 915MHz (Mesh)&#10;Cellular: 4G LTE (Tertiary)&#10;Satellite: Future ready&#10;—&#10;Failover: &lt;30s auto-switch" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#B3D9FF;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="250" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 7: User Interface -->
+        <mxCell id="block7" value="«block»&#10;User Interface&#10;—&#10;Mobile App (iOS/Android)&#10;Web Portal (Browser)&#10;Wall Display (Optional)&#10;—&#10;Functions:&#10;• Arm/Disarm&#10;• View cameras&#10;• Manage users&#10;• Automation config" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFFFCC;" vertex="1" parent="1">
+          <mxGeometry x="50" y="550" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 8: Cloud Services -->
+        <mxCell id="block8" value="«block»&#10;Cloud Services (Optional)&#10;—&#10;Platforms: AWS IoT / Azure&#10;Functions:&#10;• Event history backup&#10;• Remote access fallback&#10;• Analytics&#10;• Machine learning&#10;—&#10;Cost: $10-15/month" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#FFFFCC;strokeColor=#FF9900;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="260" y="550" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- BLOCK 9: Controller Subsystem -->
+        <mxCell id="block9" value="«block»&#10;Controller Subsystem&#10;—&#10;Smart Lock (Nuki)&#10;Smart Lights (Philips Hue)&#10;Smart Outlets (Wemo)&#10;Shutoff Valve (Wireless)&#10;—&#10;Primary: WiFi&#10;Backup: Z-Wave mesh" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#B3D9FF;" vertex="1" parent="1">
+          <mxGeometry x="470" y="550" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- CONNECTIONS FROM MAIN BLOCK TO SUBSYSTEMS -->
+        <!-- Control Unit -->
+        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="sys-block" target="block1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Sensors -->
+        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="sys-block" target="block2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Cameras -->
+        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="sys-block" target="block3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Alarm -->
+        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="sys-block" target="block4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Power -->
+        <mxCell id="conn5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="sys-block" target="block5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Connectivity -->
+        <mxCell id="conn6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="sys-block" target="block6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- UI -->
+        <mxCell id="conn7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="sys-block" target="block7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Cloud -->
+        <mxCell id="conn8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF9900;strokeWidth=2;strokeDasharray=5,5;" edge="1" parent="1" source="sys-block" target="block8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Controllers -->
+        <mxCell id="conn9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="sys-block" target="block9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- INTER-BLOCK CONNECTIONS -->
+        <!-- Hub ↔ Sensors -->
+        <mxCell id="inter1" value="Events (LoRaWAN)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=1.5;fontSize=8;" edge="1" parent="1" source="block1" target="block2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Hub ↔ Cameras -->
+        <mxCell id="inter2" value="Video/Events (PoE/WiFi)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00AA00;strokeWidth=1.5;fontSize=8;" edge="1" parent="1" source="block1" target="block3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Hub ↔ Alarm -->
+        <mxCell id="inter3" value="Trigger Commands" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF6600;strokeWidth=1.5;fontSize=8;" edge="1" parent="1" source="block1" target="block4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Hub ↔ Controllers -->
+        <mxCell id="inter4" value="Control Commands (WiFi)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0066CC;strokeWidth=1.5;fontSize=8;" edge="1" parent="1" source="block1" target="block9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Hub ↔ UI -->
+        <mxCell id="inter5" value="User Commands" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9900CC;strokeWidth=1.5;fontSize=8;" edge="1" parent="1" source="block1" target="block7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend" value="Block Types: 🔵 Hardware Subsystem  |  🟢 Software Subsystem  |  🟡 I/O Interface  |  🟠 Optional/Cloud  |  Solid Lines = Required  |  Dashed Lines = Optional" style="text;html=1;fontSize=9;align=center;" vertex="1" parent="1">
+          <mxGeometry x="50" y="830" width="1300" height="40" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
