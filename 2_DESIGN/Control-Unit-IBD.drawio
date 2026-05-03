@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="draw.io" modified="2026-05-03" agent="Mozilla/5.0" version="24.0" type="device">
+  <diagram id="control-unit-ibd" name="Control Unit IBD">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="2000" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Title -->
+        <mxCell id="title" value="Control Unit Internal Block Diagram (IBD)&#10;Smart Home Security System - Hierarchical Decomposition" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fillColor=none;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="1400" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- Main Control Unit Block (container) -->
+        <mxCell id="control-unit-outer" value="Control Unit (Central Hub)&#10;[SysML Block]" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fontSize=12;fontStyle=1;fillColor=#fff3e0;strokeColor=#f57c00;verticalAlign=top;padding=10" vertex="1" parent="1">
+          <mxGeometry x="100" y="70" width="1200" height="1800" as="geometry"/>
+        </mxCell>
+        
+        <!-- BOUNDARY PORTS Section -->
+        <mxCell id="ports-label" value="BOUNDARY PORTS (Interfaces)" style="text;html=1;fontSize=11;fontStyle=1;fillColor=#e3f2fd;strokeColor=#1976d2;align=center;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="120" y="90" width="1160" height="25" as="geometry"/>
+        </mxCell>
+        
+        <!-- Input Ports (left side) -->
+        <mxCell id="in-motion" value="[input] motionEvents&#10;EventStream[0..*]" style="text;html=1;align=center;fontSize=9;fillColor=#c8e6c9;strokeColor=#388e3c;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="130" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="in-door" value="[input] doorEvents&#10;EventStream[0..*]" style="text;html=1;align=center;fontSize=9;fillColor=#c8e6c9;strokeColor=#388e3c;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="190" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="in-water" value="[input] waterEvents&#10;EventStream[0..*]" style="text;html=1;align=center;fontSize=9;fillColor=#c8e6c9;strokeColor=#388e3c;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="250" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="in-video" value="[input] videoFeeds&#10;VideoStream[0..*]" style="text;html=1;align=center;fontSize=9;fillColor=#c8e6c9;strokeColor=#388e3c;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="310" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="in-user" value="[input] userCommands&#10;Command[0..*]" style="text;html=1;align=center;fontSize=9;fillColor=#c8e6c9;strokeColor=#388e3c;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="370" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="in-cloud" value="[input] cloudSync&#10;SyncData[periodic]" style="text;html=1;align=center;fontSize=9;fillColor=#c8e6c9;strokeColor=#388e3c;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="430" width="95" height="50" as="geometry"/>
+        </mxCell>
+        
+        <!-- Output Ports (right side) -->
+        <mxCell id="out-alarm" value="[output] alarmTriggers&#10;AlarmSignal[0..*]" style="text;html=1;align=center;fontSize=9;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="1205" y="130" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="out-controller" value="[output] controllerCmd&#10;Command[0..*]" style="text;html=1;align=center;fontSize=9;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="1205" y="190" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="out-notify" value="[output] notifications&#10;Alert[0..*]" style="text;html=1;align=center;fontSize=9;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="1205" y="250" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="out-video" value="[output] videoRecord&#10;VideoFile[periodic]" style="text;html=1;align=center;fontSize=9;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="1205" y="310" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="out-cloud" value="[output] eventLog&#10;EventLog[periodic]" style="text;html=1;align=center;fontSize=9;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="1205" y="370" width="95" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="out-diag" value="[output] diagnostics&#10;SysStatus[periodic]" style="text;html=1;align=center;fontSize=9;fillColor=#ffccbc;strokeColor=#d84315;strokeWidth=1;rounded=1" vertex="1" parent="1">
+          <mxGeometry x="1205" y="430" width="95" height="50" as="geometry"/>
+        </mxCell>
+        
+        <!-- INTERNAL PARTS Section -->
+        <mxCell id="parts-label" value="INTERNAL PARTS (Decomposition)" style="text;html=1;fontSize=11;fontStyle=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;align=center;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="120" y="510" width="1160" height="25" as="geometry"/>
+        </mxCell>
+        
+        <!-- Part 1: Event Processing Engine -->
+        <mxCell id="part-event-proc" value="eventProcessor: EventProcessingEngine&#10;&#10;Responsibilities:&#10;- Aggregate sensor events&#10;- Deduplicate motion events&#10;- Correlate spatially/temporally&#10;- Queue events for decision logic" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#e0f2f1;strokeColor=#00796b;strokeWidth=2;align=left;verticalAlign=top;padding=8" vertex="1" parent="1">
+          <mxGeometry x="135" y="550" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- Part 2: Local Decision Engine -->
+        <mxCell id="part-decision" value="decisionEngine: LocalDecisionEngine&#10;&#10;Responsibilities:&#10;- Evaluate automation rules&#10;- Trigger alarms&#10;- Make failover decisions&#10;- Execute offline logic" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#e8f5e9;strokeColor=#2e7d32;strokeWidth=2;align=left;verticalAlign=top;padding=8" vertex="1" parent="1">
+          <mxGeometry x="360" y="550" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- Part 3: Storage Manager -->
+        <mxCell id="part-storage" value="storageManager: LocalStorageManager&#10;&#10;Responsibilities:&#10;- Event database (SQLite)&#10;- 30-day log retention&#10;- Offline video buffering&#10;- Index management" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#fff3e0;strokeColor=#e65100;strokeWidth=2;align=left;verticalAlign=top;padding=8" vertex="1" parent="1">
+          <mxGeometry x="585" y="550" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- Part 4: Authentication Manager -->
+        <mxCell id="part-auth" value="authManager: AuthenticationManager&#10;&#10;Responsibilities:&#10;- User login validation&#10;- Session management&#10;- Permission enforcement&#10;- Audit logging" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#f3e5f5;strokeColor=#6a1b9a;strokeWidth=2;align=left;verticalAlign=top;padding=8" vertex="1" parent="1">
+          <mxGeometry x="810" y="550" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- Part 5: Connectivity Manager -->
+        <mxCell id="part-connectivity" value="connectivityMgr: ConnectivityManager&#10;&#10;Responsibilities:&#10;- WiFi/Cellular failover&#10;- Mesh network routing&#10;- Cloud sync scheduling&#10;- Protocol handling" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;fillColor=#e3f2fd;strokeColor=#0d47a1;strokeWidth=2;align=left;verticalAlign=top;padding=8" vertex="1" parent="1">
+          <mxGeometry x="1035" y="550" width="200" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- DATA FLOWS Section -->
+        <mxCell id="flows-label" value="ITEM FLOWS (Data Connections)" style="text;html=1;fontSize=11;fontStyle=1;fillColor=#fce4ec;strokeColor=#c2185b;align=center;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="120" y="700" width="1160" height="25" as="geometry"/>
+        </mxCell>
+        
+        <!-- Flow 1: Events to Processor -->
+        <mxCell id="flow-1" value="motionEvents, doorEvents, waterEvents&#10;- eventProcessor.eventInput: EventStream" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="135" y="740" width="200" height="50" as="geometry"/>
+        </mxCell>
+        
+        <!-- Flow 2: Processed Events to Decision -->
+        <mxCell id="flow-2" value="eventProcessor.processedEvents&#10;- decisionEngine.eventInput: ProcessedEvent" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="360" y="740" width="180" height="50" as="geometry"/>
+        </mxCell>
+        
+        <!-- Flow 3: Decision to Outputs -->
+        <mxCell id="flow-3" value="decisionEngine.alarmSignal&#10;- alarmTriggers: AlarmSignal" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="585" y="740" width="180" height="50" as="geometry"/>
+        </mxCell>
+        
+        <!-- Flow 4: Events to Storage -->
+        <mxCell id="flow-4" value="eventProcessor.logStream&#10;- storageManager.eventQueue: EventLog" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="810" y="740" width="180" height="50" as="geometry"/>
+        </mxCell>
+        
+        <!-- Flow 5: Auth and Control -->
+        <mxCell id="flow-5" value="userCommands (authenticated)&#10;- decisionEngine.command: AuthorizedCommand" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="1035" y="740" width="200" height="50" as="geometry"/>
+        </mxCell>
+        
+        <!-- SEQUENCE / STATE MACHINE Section -->
+        <mxCell id="sequence-label" value="CRITICAL SEQUENCES" style="text;html=1;fontSize=11;fontStyle=1;fillColor=#e1f5fe;strokeColor=#01579b;align=center;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="120" y="820" width="1160" height="25" as="geometry"/>
+        </mxCell>
+        
+        <!-- Sequence 1: Motion Alert Path -->
+        <mxCell id="seq-1" value="MOTION DETECTION FLOW:&#10;1. motionEvents to eventProcessor.aggregate()&#10;2. eventProcessor.dedup() checks 500ms window&#10;3. decisionEngine.evaluate(rules) - alarm_needed?&#10;4. IF yes: decisionEngine.trigger() to alarmTriggers&#10;5. notify + storageManager.log()&#10;Latency: &lt;500ms (local processing only)" style="text;html=1;align=left;fontSize=8;fillColor=#c8e6c9;strokeColor=#1b5e20;rounded=1;padding=6;fontFamily=monospace" vertex="1" parent="1">
+          <mxGeometry x="135" y="860" width="350" height="110" as="geometry"/>
+        </mxCell>
+        
+        <!-- Sequence 2: Cloud Sync Path -->
+        <mxCell id="seq-2" value="CLOUD SYNC FLOW (Periodic):&#10;1. connectivityMgr.isConnected()? Check status&#10;2. IF connected: storageManager.getUnsynced()&#10;3. Filter last 4 hours of events&#10;4. connectivityMgr.send() to eventLog&#10;5. storageManager.markSynced()&#10;Frequency: Every 5 minutes or on demand" style="text;html=1;align=left;fontSize=8;fillColor=#e3f2fd;strokeColor=#0d47a1;rounded=1;padding=6;fontFamily=monospace" vertex="1" parent="1">
+          <mxGeometry x="510" y="860" width="350" height="110" as="geometry"/>
+        </mxCell>
+        
+        <!-- Sequence 3: Offline Operation -->
+        <mxCell id="seq-3" value="OFFLINE AUTONOMY (No Cloud):&#10;1. connectivityMgr detects loss&#10;2. decisionEngine.mode = LOCAL_ONLY&#10;3. All processing continues locally&#10;4. Events queued in storage (30-day)&#10;5. NO ALERTS sent to cloud (no connectivity)&#10;6. On reconnect: sync queued events" style="text;html=1;align=left;fontSize=8;fillColor=#f3e5f5;strokeColor=#6a1b9a;rounded=1;padding=6;fontFamily=monospace" vertex="1" parent="1">
+          <mxGeometry x="885" y="860" width="350" height="110" as="geometry"/>
+        </mxCell>
+        
+        <!-- REQUIREMENTS TRACEABILITY Section -->
+        <mxCell id="req-label" value="REQUIREMENTS MAPPED TO COMPONENTS" style="text;html=1;fontSize=11;fontStyle=1;fillColor=#ffe0b2;strokeColor=#e65100;align=center;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="120" y="1000" width="1160" height="25" as="geometry"/>
+        </mxCell>
+        
+        <!-- Requirement mapping -->
+        <mxCell id="req-1" value="eventProcessor - REQ-010-019 (Motion/Door/Water)&#10;Tests: VER-001-008, VAL-022 - Event detection and latency" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="135" y="1040" width="270" height="50" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="req-2" value="decisionEngine - REQ-050-070 (Automation), REQ-281-285 (States)&#10;Tests: VER-017, VAL-008 - Rule evaluation and transitions" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="420" y="1040" width="270" height="50" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="req-3" value="storageManager - REQ-180-190 (Storage), REQ-270-280 (Offline)&#10;Tests: VER-029, VAL-016-017 - Local storage and autonomy" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="705" y="1040" width="270" height="50" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="req-4" value="authManager - REQ-100-110 (Security/Auth), REQ-140 (RBAC)&#10;Tests: VER-021-026, VAL-019 - Authentication and permissions" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="990" y="1040" width="270" height="50" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="req-5" value="connectivityMgr - REQ-120-125 (Failover), REQ-290-300 (Off-grid)&#10;Tests: VER-027-028, VAL-015-018 - Connectivity and resilience" style="text;html=1;align=left;fontSize=8;fillColor=#fff9c4;strokeColor=#f57f17;rounded=1;padding=5" vertex="1" parent="1">
+          <mxGeometry x="135" y="1100" width="1125" height="40" as="geometry"/>
+        </mxCell>
+        
+        <!-- NOTES Section -->
+        <mxCell id="notes-label" value="DESIGN NOTES" style="text;html=1;fontSize=11;fontStyle=1;fillColor=#e0bfff;strokeColor=#512da8;align=center;verticalAlign=middle" vertex="1" parent="1">
+          <mxGeometry x="120" y="1160" width="1160" height="25" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="notes" value="- Each component is independently testable (unit test compatible)&#10;- Async message-driven architecture enables offline-first operation&#10;- Storage manager implements event sourcing for audit trail&#10;- Decision engine supports static rules (config) and ML models (future)&#10;- Connectivity manager abstracts transport layer (WiFi/Cellular/Mesh/Satellite)&#10;- All outputs are idempotent (can be replayed on cloud without duplication)&#10;- Authentication manager uses local SQLite with optional cloud SAML integration&#10;- Diagram shows decomposition one level deeper than System-Blocks.drawio" style="text;html=1;align=left;fontSize=8;fillColor=#f3e5f5;strokeColor=#512da8;rounded=1;padding=10;whiteSpace=wrap" vertex="1" parent="1">
+          <mxGeometry x="135" y="1195" width="1160" height="110" as="geometry"/>
+        </mxCell>
+        
+        <!-- Footer -->
+        <mxCell id="footer" value="This diagram is one level deeper than System-Blocks.drawio (system level)&#10;and one level shallower than detailed component specifications.&#10;Used for design review and architectural documentation." style="text;html=1;align=center;fontSize=8;fillColor=#e0e0e0;strokeColor=#616161;italic=true" vertex="1" parent="1">
+          <mxGeometry x="120" y="1330" width="1160" height="50" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
